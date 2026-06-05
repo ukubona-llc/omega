@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ω — Ukubona LLC</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            mono: ['"DM Mono"', 'monospace'],
+            serif: ['"DM Serif Display"', 'serif'],
+          },
+          colors: {
+            omega: {
+              50:  '#EEEDFE',
+              100: '#CECBF6',
+              200: '#AFA9EC',
+              400: '#7F77DD',
+              600: '#534AB7',
+              800: '#3C3489',
+              900: '#26215C',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <style>
+    /* Center the header and nav within max-width container */
+    .site-header, .site-nav, main { max-width: 48rem; margin-left: auto; margin-right: auto; }
+    .site-header { padding: 1.25rem 1.5rem; display: flex; align-items: baseline; gap: 1rem; }
+    .header-border { border-bottom: 1px solid rgb(41 37 36); }
+    .nav-border { border-bottom: 1px solid rgb(41 37 36); }
+    .site-nav { display: flex; gap: 0.25rem; overflow-x: auto; padding-left: 1.5rem; }
+  </style>
+</head>
+
+<body class="bg-stone-950 text-stone-200 font-sans min-h-screen">
+
+  <!-- Header — centered -->
+  <div class="header-border">
+    <header class="site-header">
+      <span class="font-serif text-3xl text-omega-400">Ω</span>
+      <div>
+        <h1 class="text-base font-medium tracking-tight text-stone-100">What is Ω?</h1>
+        <p class="text-xs text-stone-500 mt-0.5">Ukubona LLC · Clinical digital twin · Zero-cost architecture</p>
+      </div>
+    </header>
+  </div>
+
+  <!-- Tab nav — centered -->
+  <div class="nav-border">
+    <nav class="site-nav" id="tab-nav">
+      <button data-tab="origin"  class="tab-btn px-4 py-3 text-xs font-medium tracking-wide uppercase border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition-colors whitespace-nowrap">Origin</button>
+      <button data-tab="pentad" class="tab-btn px-4 py-3 text-xs font-medium tracking-wide uppercase border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition-colors whitespace-nowrap">Pentad</button>
+      <button data-tab="omega"  class="tab-btn px-4 py-3 text-xs font-medium tracking-wide uppercase border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition-colors whitespace-nowrap">What is Ω?</button>
+      <button data-tab="fgt"   class="tab-btn px-4 py-3 text-xs font-medium tracking-wide uppercase border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition-colors whitespace-nowrap">FGT &amp; Learning</button>
+      <button data-tab="live"  class="tab-btn px-4 py-3 text-xs font-medium tracking-wide uppercase border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition-colors whitespace-nowrap">Live Ω</button>
+    </nav>
+  </div>
+
+  <main class="max-w-3xl mx-auto px-6 py-10 space-y-0">
+
+    <!-- ── ORIGIN ── -->
+    <section id="tab-origin" class="tab-panel space-y-6">
+      <p class="text-sm text-stone-400">The clinical digital twin equation at the core of Ukubona LLC.</p>
+
+      <div class="bg-stone-900 border-l-4 border-omega-600 rounded-r-lg p-5 overflow-x-auto text-center">
+        <!-- MathJax version 1 equation - rendered as SVG inline for reliability -->
+        <div class="font-mono text-sm text-stone-200 py-2">
+          log(x)<sub>nonself</sub> = [β₀ + β₁S]<sub>input</sub> + [β₂Vᵢ]<sub>throughput</sub> + [β₃V<sub>aS</sub> + β₄V<sub>aF</sub>]<sub>output</sub> + <strong class="text-omega-400">Ω</strong><sub>self</sub>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1 text-sm">
+        <span class="font-mono text-stone-400 py-2">log(x)</span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Compressively encoded external signal — diminishing returns, sensory physiology</span>
+
+        <span class="font-mono text-stone-400 py-2">β₀</span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Autoregressive memory / accumulated baseline state</span>
+
+        <span class="font-mono text-stone-400 py-2">S</span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Surface compartment — skin, connective tissue, peripheral nerves; primary interface</span>
+
+        <span class="font-mono text-stone-400 py-2">Vᵢ</span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Viscera — gut, liver, kidneys, lungs; core organ dynamics</span>
+
+        <span class="font-mono text-stone-400 py-2">V<sub>aS</sub></span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Vascular-structural — fixed changes: atheroma, remodelling, fibrosis</span>
+
+        <span class="font-mono text-stone-400 py-2">V<sub>aF</sub></span>
+        <span class="py-2 border-b border-stone-800 text-stone-300">Vascular-functional — dynamic: endothelial reactivity, Prinzmetal spasm, tone regulation</span>
+
+        <span class="font-mono text-omega-400 font-semibold py-2">Ω</span>
+        <span class="py-2 text-stone-100 font-medium">Higher-order interactions (2-, 3-, N-way) among S, Vᵢ, V<sub>aS</sub>, V<sub>aF</sub> — the coupling term that cannot be observed, only inferred</span>
+      </div>
+
+      <blockquote class="border-l-2 border-stone-600 pl-4 text-sm text-stone-400 italic">
+        Two patients with identical first-order values can diverge dramatically. The unexplained remainder is not noise. It is interaction.
+      </blockquote>
+
+      <div class="bg-stone-900 border-l-4 border-omega-600 rounded-r-lg p-5 overflow-x-auto">
+        <div class="font-mono text-xs text-stone-300 text-center py-1">
+          Ω<sub>t</sub> = Σ<sub>i&lt;j</sub> θ<sub>ij</sub>·X<sub>i</sub>·X<sub>j</sub> + Σ<sub>i&lt;j&lt;k</sub> θ<sub>ijk</sub>·X<sub>i</sub>·X<sub>j</sub>·X<sub>k</sub> + ···
+          &nbsp;&nbsp;&nbsp; X<sub>i</sub> ∈ {S, Vᵢ, V<sub>aS</sub>, V<sub>aF</sub>}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PENTAD ── -->
+    <section id="tab-pentad" class="tab-panel space-y-6 hidden">
+      <p class="text-sm text-stone-400">State<sub>t</sub> = Σ Eventᵢ — the five-layer architecture across biology, software, and civilisation.</p>
+
+      <div class="grid grid-cols-5 gap-2">
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center hover:border-stone-600 transition-colors cursor-default">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">I</div>
+          <div class="font-medium text-stone-100 text-sm">Nonself</div>
+          <div class="text-xs text-stone-500 mt-1">Journaling / JWT</div>
+          <div class="text-xs text-stone-600 mt-0.5">Spinothalamic</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center hover:border-stone-600 transition-colors cursor-default">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">II</div>
+          <div class="font-medium text-stone-100 text-sm">Input</div>
+          <div class="text-xs text-stone-500 mt-1">FastAPI / Render</div>
+          <div class="text-xs text-stone-600 mt-0.5">Thalamic-BG</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center hover:border-stone-600 transition-colors cursor-default">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">III</div>
+          <div class="font-medium text-stone-100 text-sm">Throughput</div>
+          <div class="text-xs text-stone-500 mt-1">NDJSON / GitHub</div>
+          <div class="text-xs text-stone-600 mt-0.5">Hippocampus</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center hover:border-stone-600 transition-colors cursor-default">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-1">IV</div>
+          <div class="font-medium text-stone-100 text-sm">Output</div>
+          <div class="text-xs text-stone-500 mt-1">SlowAPI / LLMs</div>
+          <div class="text-xs text-stone-600 mt-0.5">PFC</div>
+        </div>
+        <div class="bg-omega-900 border border-omega-600 rounded-lg p-3 text-center cursor-default">
+          <div class="text-xs uppercase tracking-widest text-omega-400 mb-1">V</div>
+          <div class="font-medium text-omega-200 text-sm">Self · Ω</div>
+          <div class="text-xs text-omega-400 mt-1">Vite-React / UX</div>
+          <div class="text-xs text-omega-600 mt-0.5">Corticospinal</div>
+        </div>
+      </div>
+
+      <div class="bg-stone-900 rounded-lg p-5 text-center">
+        <div class="font-mono text-sm text-stone-300">
+          Self<sub>t−1</sub> ⟶ β₀ ⟶ State<sub>t</sub> = Σ Eventᵢ
+        </div>
+        <p class="text-center text-xs text-stone-500 mt-2">Yesterday's Self becomes today's baseline. The loop closes.</p>
+      </div>
+
+      <h3 class="text-xs uppercase tracking-widest text-stone-500 pt-2">Civilisational scaling</h3>
+      <div class="grid grid-cols-5 gap-2">
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center">
+          <div class="text-xs text-stone-500 mb-1">Capital</div>
+          <div class="text-xs font-medium text-stone-200">Sovereign Person</div>
+          <div class="text-xs text-stone-600 mt-1">θᵗ / Variance</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center">
+          <div class="text-xs text-stone-500 mb-1">Labor</div>
+          <div class="text-xs font-medium text-stone-200">Kin Network</div>
+          <div class="text-xs text-stone-600 mt-1">L₀+Σwᵢ·Lᵢ / Coupling</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center">
+          <div class="text-xs text-stone-500 mb-1">Commodities</div>
+          <div class="text-xs font-medium text-stone-200">Care Ecosystem</div>
+          <div class="text-xs text-stone-600 mt-1">f(σ²,λ,ε) / Shock</div>
+        </div>
+        <div class="bg-stone-900 border border-stone-800 rounded-lg p-3 text-center">
+          <div class="text-xs text-stone-500 mb-1">Services</div>
+          <div class="text-xs font-medium text-stone-200">Fed. Regulators</div>
+          <div class="text-xs text-stone-600 mt-1">γ|ε<sub>FGT</sub>|² / Error</div>
+        </div>
+        <div class="bg-omega-900 border border-omega-700 rounded-lg p-3 text-center">
+          <div class="text-xs text-omega-400 mb-1">Information</div>
+          <div class="text-xs font-medium text-omega-200">Civ. Planners</div>
+          <div class="text-xs text-omega-600 mt-1">L(θ<sup>t+1</sup>) / Update</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT IS Ω ── -->
+    <section id="tab-omega" class="tab-panel space-y-6 hidden">
+
+      <div class="text-center py-6">
+        <span class="font-serif text-8xl text-omega-400 block leading-none">Ω</span>
+        <p class="text-sm text-stone-400 mt-3">Four interpretations, one invariant</p>
+      </div>
+
+      <div class="divide-y divide-stone-800 border border-stone-800 rounded-xl overflow-hidden">
+
+        <div class="p-5 bg-stone-900">
+          <div class="flex items-start gap-4">
+            <span class="text-xs uppercase tracking-widest text-stone-500 min-w-[56px] pt-0.5">Original</span>
+            <div class="space-y-2 text-sm text-stone-300">
+              <p><strong class="text-stone-100">Interaction entropy:</strong></p>
+              <div class="font-mono text-xs bg-stone-800 rounded p-3 text-center">
+                Ω<sub>t</sub> = −Σ<sub>k</sub> p<sub>k</sub> log p<sub>k</sub> &nbsp;&nbsp; p<sub>k</sub> = N<sub>k</sub> / Σ N<sub>j</sub>
+              </div>
+              <p class="text-stone-400">Dispersion of events across compartments. All events in Surface → low entropy. Events spread across all compartments → high entropy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 bg-stone-900">
+          <div class="flex items-start gap-4">
+            <span class="text-xs uppercase tracking-widest text-stone-500 min-w-[56px] pt-0.5">xAI</span>
+            <div class="space-y-2 text-sm text-stone-300">
+              <p><strong class="text-stone-100">Adaptive reserve</strong> — capacity to convert shock into adaptation, not the shock itself.</p>
+              <p class="text-stone-400">Two systems face identical perturbations. One collapses. One learns. The difference is Ω. <em>That which does not kill me makes me stronger.</em></p>
+              <div class="font-mono text-xs bg-stone-800 rounded p-3 text-center">
+                Δθ ∝ ε<sub>FGT</sub> &nbsp;⇒&nbsp; Ω = capacity to metabolise shock
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 bg-stone-900">
+          <div class="flex items-start gap-4">
+            <span class="text-xs uppercase tracking-widest text-stone-500 min-w-[56px] pt-0.5">Google</span>
+            <div class="space-y-2 text-sm text-stone-300">
+              <p><strong class="text-stone-100">Sovereignty Intelligence Broker (SIB)</strong> — Ω determines how each new Ukubona<sub>i</sub> is routed across cognitive-compute layers.</p>
+              <div class="overflow-x-auto">
+                <table class="text-xs w-full mt-2 border-collapse">
+                  <thead>
+                    <tr class="text-stone-500 uppercase text-left">
+                      <th class="pr-4 pb-2 font-medium tracking-wide">GAP level</th>
+                      <th class="pr-4 pb-2 font-medium tracking-wide">Route</th>
+                      <th class="pb-2 font-medium tracking-wide">Layer</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-stone-400">
+                    <tr class="border-t border-stone-800"><td class="pr-4 py-1.5">Low — black/white</td><td class="pr-4 py-1.5">Direct relay</td><td class="py-1.5">FastAPI (Thalamic-BG)</td></tr>
+                    <tr class="border-t border-stone-800"><td class="pr-4 py-1.5">Medium — light gray</td><td class="pr-4 py-1.5">Async log &amp; update</td><td class="py-1.5">NDJSON / GitHub</td></tr>
+                    <tr class="border-t border-stone-800"><td class="pr-4 py-1.5 text-omega-400">High — dark gray</td><td class="pr-4 py-1.5">Deliberative loop</td><td class="py-1.5 text-omega-400">SlowAPI / LLMs (PFC)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 bg-stone-900">
+          <div class="flex items-start gap-4">
+            <span class="text-xs uppercase tracking-widest text-stone-500 min-w-[56px] pt-0.5">OpenAI</span>
+            <div class="space-y-2 text-sm text-stone-300">
+              <p><strong class="text-stone-100">Reachable future state-space</strong> — not what happened, but what could still happen.</p>
+              <div class="font-mono text-xs bg-stone-800 rounded p-3 text-center space-y-1">
+                <div>Ω<sub>t</sub> = 𝒮(State<sub>t</sub>)</div>
+                <div>Ω<sub>t</sub> ∝ Var(P(Event<sub>t+1</sub> | State<sub>t</sub>))</div>
+                <div>Ω ≈ H<sup>−1</sup> &nbsp;(inverse Hessian of loss landscape)</div>
+              </div>
+              <p class="text-stone-400">Flat loss landscape → many futures → high Ω. Sharp minimum → few futures → low Ω. The LLM Roundtable estimates Ω by their disagreement.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bg-stone-900 rounded-xl p-6 space-y-4">
+        <h3 class="text-xs uppercase tracking-widest text-stone-500">The convergence — zero-cost operational formula</h3>
+        <div class="font-mono text-sm bg-stone-800 rounded-lg p-4 overflow-x-auto text-center">
+          Ω<sub>t</sub> ≈ <u>H(predictions)</u><sub>entropy</sub> + <u>Var(ε<sub>FGT</sub>)</u><sub>prediction error</sub> + <u>D(LLMs)</u><sub>disagreement</sub>
+        </div>
+        <p class="text-xs text-stone-500">No vector database. No embeddings. No retraining. Just append-only NDJSON events. FastAPI recomputes Ω on each append. Vite/React renders the trajectory.</p>
+      </div>
+
+      <blockquote class="border-l-2 border-stone-700 pl-4 text-sm text-stone-400 italic">
+        <em>Okubala si kulaba</em> — to count the steps is not to see the mountain. The NDJSON ledger counts every event perfectly. Ω tells you what the accumulated events have <em>become</em>.
+      </blockquote>
+    </section>
+
+    <!-- ── FGT & LEARNING ── -->
+    <section id="tab-fgt" class="tab-panel space-y-6 hidden">
+      <p class="text-sm text-stone-400">Federated Ground Truth — the weight update that closes the learning loop. No error, no update, no learning.</p>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-stone-900 border border-stone-800 rounded-xl p-5">
+          <h4 class="text-xs uppercase tracking-widest text-stone-500 mb-3">Decision time (ex-ante)</h4>
+          <p class="font-mono text-base text-stone-200 mb-2">f(σ², λ, ε)</p>
+          <p class="text-xs text-stone-400">Phase III — output layer computes under uncertainty. Given variance σ², how aggressively to act?</p>
+        </div>
+        <div class="bg-omega-900 border border-omega-700 rounded-xl p-5">
+          <h4 class="text-xs uppercase tracking-widest text-omega-400 mb-3">Learning time (ex-post)</h4>
+          <p class="font-mono text-base text-omega-200 mb-2">ε<sub>FGT</sub> arrives</p>
+          <p class="text-xs text-omega-400">Phase IV — ground truth feeds back. Weight update fires. The ball descends the gradient.</p>
+        </div>
+      </div>
+
+      <div class="bg-stone-900 rounded-xl p-5 font-mono text-sm text-center overflow-x-auto">
+        <div class="space-y-2 text-stone-300">
+          <div>ε<sub>FGT</sub> = y<sub>true</sub> − y<sub>pred</sub></div>
+          <div>w<sub>t+1</sub> = w<sub>t</sub> − γ |ε<sub>FGT</sub>|²</div>
+        </div>
+      </div>
+
+      <blockquote class="border-l-2 border-stone-700 pl-4 text-sm text-stone-400 italic">
+        Blindly shuffling down the gradient. That is the most honest description of learning there is.
+      </blockquote>
+
+      <h3 class="text-xs uppercase tracking-widest text-stone-500">The five phases</h3>
+      <ol class="space-y-2">
+        <li class="flex gap-4 text-sm">
+          <span class="min-w-[80px] text-xs uppercase tracking-wide text-stone-500 pt-0.5">Phase I</span>
+          <span class="text-stone-300 border-l border-stone-800 pl-4">Complaint — world sends a perturbation</span>
+        </li>
+        <li class="flex gap-4 text-sm">
+          <span class="min-w-[80px] text-xs uppercase tracking-wide text-stone-500 pt-0.5">Phase II</span>
+          <span class="text-stone-300 border-l border-stone-800 pl-4">Parsing — input layer receives and filters</span>
+        </li>
+        <li class="flex gap-4 text-sm">
+          <span class="min-w-[80px] text-xs uppercase tracking-wide text-stone-500 pt-0.5">Phase III</span>
+          <span class="text-stone-300 border-l border-stone-800 pl-4">Decision — throughput and output compute <em>under uncertainty</em>. Recommendation made.</span>
+        </li>
+        <li class="flex gap-4 text-sm">
+          <span class="min-w-[80px] text-xs uppercase tracking-wide text-omega-400 pt-0.5">Phase IV</span>
+          <span class="text-stone-100 border-l-2 border-omega-600 pl-4"><strong>WAIT.</strong> FGT must arrive before weights update. Gradient descent only works if you let the loss actually compute.</span>
+        </li>
+        <li class="flex gap-4 text-sm">
+          <span class="min-w-[80px] text-xs uppercase tracking-wide text-stone-500 pt-0.5">Phase V</span>
+          <span class="text-stone-300 border-l border-stone-800 pl-4">Learning — weight updates. Baseline shifts. ↻ Cycle repeats.</span>
+        </li>
+      </ol>
+
+      <div class="bg-stone-900 rounded-xl p-5 font-mono text-sm text-center overflow-x-auto">
+        <div class="text-stone-300">Corridor<sub>t</sub> = μ ± (σ₀ + λ·Ω<sub>t</sub>)</div>
+        <p class="text-xs text-stone-500 text-center mt-2 font-sans">High Ω → corridor widens, absorbs noise. Low Ω → corridor tightens, any breach is a real signal.</p>
+      </div>
+    </section>
+
+    <!-- ── LIVE Ω ── -->
+    <section id="tab-live" class="tab-panel space-y-6 hidden">
+      <p class="text-sm text-stone-400">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5 animate-pulse"></span>
+        Simulate Ω<sub>t</sub> from event distributions — zero-cost, append-only computation.
+      </p>
+
+      <div class="bg-stone-900 rounded-xl p-5 space-y-4">
+        <h3 class="text-xs uppercase tracking-widest text-stone-500 mb-2">Event counts per compartment</h3>
+
+        <div class="grid gap-3">
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">Surface events (S)</label>
+            <input type="range" min="0" max="50" value="20" id="s-ev" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="s-val" class="w-8 text-right font-mono text-xs text-stone-300">20</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">Visceral events (Vᵢ)</label>
+            <input type="range" min="0" max="50" value="10" id="vi-ev" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="vi-val" class="w-8 text-right font-mono text-xs text-stone-300">10</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">Vascular-structural (V<sub>aS</sub>)</label>
+            <input type="range" min="0" max="50" value="5" id="vas-ev" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="vas-val" class="w-8 text-right font-mono text-xs text-stone-300">5</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">Vascular-functional (V<sub>aF</sub>)</label>
+            <input type="range" min="0" max="50" value="3" id="vaf-ev" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="vaf-val" class="w-8 text-right font-mono text-xs text-stone-300">3</span>
+          </div>
+        </div>
+
+        <h3 class="text-xs uppercase tracking-widest text-stone-500 pt-2 mb-2">Model uncertainty</h3>
+        <div class="grid gap-3">
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">LLM prediction variance</label>
+            <input type="range" min="0" max="100" value="40" id="llm-var" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="llm-val" class="w-10 text-right font-mono text-xs text-stone-300">0.40</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <label class="w-44 text-stone-400 shrink-0">FGT error (ε)</label>
+            <input type="range" min="0" max="100" value="25" id="fgt-err" class="flex-1 accent-omega-400" oninput="recalc()">
+            <span id="fgt-val" class="w-10 text-right font-mono text-xs text-stone-300">0.25</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-stone-900 rounded-xl p-4">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-2">Entropy Ω<sub>H</sub></div>
+          <div class="font-mono text-xl text-stone-100" id="out-entropy">—</div>
+          <div class="text-xs text-stone-600 mt-1">−Σ pₖ log pₖ</div>
+        </div>
+        <div class="bg-stone-900 rounded-xl p-4">
+          <div class="text-xs uppercase tracking-widest text-stone-500 mb-2">Prediction Ω<sub>P</sub></div>
+          <div class="font-mono text-xl text-stone-100" id="out-pred">—</div>
+          <div class="text-xs text-stone-600 mt-1">LLM variance</div>
+        </div>
+        <div class="bg-omega-900 border border-omega-700 rounded-xl p-4">
+          <div class="text-xs uppercase tracking-widest text-omega-400 mb-2">Composite Ω</div>
+          <div class="font-mono text-xl text-omega-200" id="out-omega">—</div>
+          <div class="text-xs text-omega-600 mt-1">Entropy + Var + ε</div>
+        </div>
+      </div>
+
+      <div id="omega-interp" class="bg-stone-900 rounded-xl p-4 text-sm text-stone-300"></div>
+
+      <div class="bg-stone-900 rounded-xl p-5">
+        <h3 class="text-xs uppercase tracking-widest text-stone-500 mb-4">Event distribution across compartments</h3>
+        <div style="position:relative;height:200px">
+          <canvas id="omega-chart" role="img" aria-label="Bar chart showing event counts across S, Vi, VaS, VaF compartments"></canvas>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-stone-800 px-6 py-6 text-center text-xs text-stone-600 mt-10">
+    <p>Ukubona LLC · State<sub>t</sub> = Σ Event<sub>i</sub> · Pentadic Biology + FGT · Event-sourced, compression-focused, patience-first</p>
+    <p class="mt-1">Built for places where FGT is late, decisions are under uncertainty, and the ground is literally the ground you stand on.</p>
+  </footer>
+
+  <script>
+    // ── Tab switching ──────────────────────────────────────────
+    const tabs   = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    function activateTab(id) {
+      tabs.forEach(btn => {
+        const on = btn.dataset.tab === id;
+        btn.classList.toggle('border-omega-400', on);
+        btn.classList.toggle('text-stone-100', on);
+        btn.classList.toggle('border-transparent', !on);
+        btn.classList.toggle('text-stone-400', !on);
+      });
+      panels.forEach(p => p.classList.toggle('hidden', p.id !== 'tab-' + id));
+      if (id === 'live') {
+        requestAnimationFrame(recalc);
+      }
+    }
+
+    tabs.forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.tab)));
+    activateTab('origin');
+
+    // ── Live Ω calculation ─────────────────────────────────────
+    let chart = null;
+
+    function recalc() {
+      const s   = +document.getElementById('s-ev').value;
+      const vi  = +document.getElementById('vi-ev').value;
+      const vas = +document.getElementById('vas-ev').value;
+      const vaf = +document.getElementById('vaf-ev').value;
+      const lv  = +document.getElementById('llm-var').value / 100;
+      const fe  = +document.getElementById('fgt-err').value / 100;
+
+      document.getElementById('s-val').textContent   = s;
+      document.getElementById('vi-val').textContent  = vi;
+      document.getElementById('vas-val').textContent = vas;
+      document.getElementById('vaf-val').textContent = vaf;
+      document.getElementById('llm-val').textContent = lv.toFixed(2);
+      document.getElementById('fgt-val').textContent = fe.toFixed(2);
+
+      const total = s + vi + vas + vaf || 1;
+      const ps = [s, vi, vas, vaf].map(x => x / total);
+      let H = 0;
+      ps.forEach(p => { if (p > 0) H -= p * Math.log2(p); });
+      const normH = H / Math.log2(4);
+      const omega = normH * 0.5 + lv * 0.3 + fe * 0.2;
+
+      document.getElementById('out-entropy').textContent = normH.toFixed(3);
+      document.getElementById('out-pred').textContent    = lv.toFixed(3);
+      document.getElementById('out-omega').textContent   = omega.toFixed(3);
+
+      let interp = '';
+      if (omega < 0.2)
+        interp = '<strong>Low Ω</strong> — system strongly converged. Predictions collapse to a narrow attractor. Few reachable futures remain. Corridor tightens: any breach is a real signal.';
+      else if (omega < 0.5)
+        interp = '<strong>Moderate Ω</strong> — balanced exploration. Some futures remain open. SIB routes between FastAPI reflexes and occasional SlowAPI deliberation.';
+      else
+        interp = '<strong>High Ω</strong> — large reachable state-space. Many futures plausible. High coupling or polypharmacy. Corridor widens to absorb expected noise. SlowAPI / LLM Roundtable engaged.';
+      document.getElementById('omega-interp').innerHTML = interp;
+
+      const cols   = ['#7F77DD', '#1D9E75', '#D85A30', '#BA7517'];
+      const bgcols = ['rgba(127,119,221,.3)', 'rgba(29,158,117,.3)', 'rgba(216,90,48,.3)', 'rgba(186,117,23,.3)'];
+      const canvas = document.getElementById('omega-chart');
+
+      if (chart) {
+        chart.data.datasets[0].data = [s, vi, vas, vaf];
+        chart.update('none');
+      } else {
+        chart = new Chart(canvas, {
+          type: 'bar',
+          data: {
+            labels: ['S', 'Vᵢ', 'VaS', 'VaF'],
+            datasets: [{
+              label: 'Event count',
+              data: [s, vi, vas, vaf],
+              backgroundColor: bgcols,
+              borderColor: cols,
+              borderWidth: 1.5,
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: { duration: 250 },
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,.06)' }, ticks: { color: '#78716c', font: { size: 11 } } },
+              x: { grid: { display: false }, ticks: { color: '#a8a29e', font: { size: 13, weight: '500' } } }
+            }
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
